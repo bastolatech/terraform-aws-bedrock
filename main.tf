@@ -80,7 +80,7 @@ resource "awscc_bedrock_agent" "bedrock_agent" {
   # open issue: https://github.com/hashicorp/terraform-provider-awscc/issues/2004
   # auto_prepare needs to be set to true
   auto_prepare    = true
-  knowledge_bases = length(local.kb_result) > 0 ? local.kb_result : null
+  # knowledge_bases = length(local.kb_result) > 0 ? local.kb_result : null
   action_groups   = length(local.action_group_list) > 0 ? local.action_group_list : null
   guardrail_configuration = var.create_guardrail == false ? null : {
     guardrail_identifier = awscc_bedrock_guardrail.guardrail[0].id
